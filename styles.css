@@ -1,0 +1,273 @@
+/* Global Reset & Theme */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #fffde7, #fce4ec, #e8f5e9, #f3e5f5);
+    background-size: 600% 600%;
+    animation: gradientFlow 30s ease infinite;
+    color: #222;
+    line-height: 1.6;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('images/hero.png');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* Colleges Grid */
+.college-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* College Tile */
+.college-tile {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.college-tile:hover {
+    transform: translateY(-5px);
+}
+
+.college-tile h3 {
+    color: #2c3e50;
+    margin-top: 0.5rem;
+}
+
+.college-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+.footer {
+    background-color: #212121;
+    color: #eee;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+
+.css-6glxW {
+    display: var(--panel-wrap-display);
+    min-height: 20px;
+    position: relative;
+    z-index: 1;
+}
+@media (min-width: 1024px) {
+    .css-\+xl44 {
+        --panel-width: var(--panel-width--md);
+        --panel-min-height: var(--panel-min-height--md);
+        --panel-pseudo-display: block;
+        --active-width: var(--active-width--md);
+        --inactive-width: var(--inactive-width--md);
+        --panel-wrap-display: flex;
+    }
+}
+@media (min-width: 768px) {
+    .css-\+xl44 {
+        --panel-width: var(--panel-width--sm);
+        --panel-min-height: var(--panel-min-height--sm);
+    }
+}
+
+.css-\+xl44 {
+    --wrap-margin: 0;
+    --wrap-padding: 0;
+    --header-color: var(--base-font-color);
+    --subheader-color: var(--base-font-color);
+    --copy-color: var(--base-font-color);
+    --panel-wrap-display: block;
+    --panel-pseudo-display: none;
+    --panel-width--base: 100%;
+    --panel-width--sm: 100%;
+    --panel-width--md: 20%;
+    --panel-width: var(--panel-width--base);
+    --active-width--md: 50%;
+    --active-width--lg: 36%;
+    --inactive-width--md: 12.5%;
+    --inactive-width--lg: 16%;
+    --panel-min-height--base: 540px;
+    --panel-min-height--sm: 590px;
+    --panel-min-height--md: 640px;
+    --panel-min-height: var(--panel-min-height--base);
+}
+
+:root {
+    --black: #000;
+    --black-alpha0: transparent;
+    --black-alpha10: rgba(0, 0, 0, .1);
+    --black-alpha25: rgba(0, 0, 0, .25);
+    --black-alpha50: rgba(0, 0, 0, .5);
+    --black-alpha75: rgba(0, 0, 0, .75);
+    --black-alpha90: rgba(0, 0, 0, .9);
+    --white: #fff;
+    --white-alpha0: hsla(0, 0%, 100%, 0);
+    --white-alpha10: hsla(0, 0%, 100%, .1);
+    --white-alpha25: hsla(0, 0%, 100%, .25);
+    --white-alpha50: hsla(0, 0%, 100%, .5);
+    --white-alpha75: hsla(0, 0%, 100%, .75);
+    --white-alpha90: hsla(0, 0%, 100%, .9);
+    --magic-brand-red: #ea3601;
+    --magic-brand-orange: #ff6000;
+    --discord-brand-color: #404fec;
+    --facebook-brand-color: #0d77fb;
+    --instagram-brand-color: #405de6;
+    --twitter-brand-color: #1da1f2;
+    --tiktok-brand-color: #fe2c55;
+    --twitch-brand-color: #9436ff;
+    --youtube-brand-color: #ff0100;
+    --system-font-family: -apple-system, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --base-font-color: var(--white);
+    --base-font-family: "Open Sans", Arial, sans-serif;
+    --base-font-size: 16px;
+    --base-word-spacing: 1px;
+    --strong-font-family: "Gotham Narrow", Arial, serif;
+    --magic-font-family: "Beleren", serif;
+    --magic-font-family-small-caps: "Beleren Small Caps", serif;
+    --html-background: var(--black);
+    --max-site-width: 1920px;
+    --default-max-content-width: 1440px;
+    --site-header-height: 54px;
+    --site-header-z-index: 100;
+    --swiper-overflow: visible;
+    --auto-card-label-color: #eb2c06;
+    --easeInSine: cubic-bezier(0.47,0,0.745,0.715);
+    --easeInCubic: cubic-bezier(0.55,0.055,0.675,0.19);
+    --easeInQuint: cubic-bezier(0.755,0.05,0.855,0.06);
+    --easeInCirc: cubic-bezier(0.6,0.04,0.98,0.335);
+    --easeOutSine: cubic-bezier(0.39,0.575,0.565,1);
+    --easeOutCubic: cubic-bezier(0.215,0.61,0.355,1);
+    --easeOutQuint: cubic-bezier(0.23,1,0.32,1);
+    --easeOutCirc: cubic-bezier(0.075,0.82,0.165,1);
+    --easeInOutSine: cubic-bezier(0.445,0.05,0.55,0.95);
+    --easeInOutCubic: cubic-bezier(0.645,0.045,0.355,1);
+    --easeInOutQuint: cubic-bezier(0.86,0,0.07,1);
+    --easeInOutCirc: cubic-bezier(0.785,0.135,0.15,0.86);
+    --easeInQuad: cubic-bezier(0.55,0.085,0.68,0.53);
+    --easeInQuart: cubic-bezier(0.895,0.03,0.685,0.22);
+    --easeInExpo: cubic-bezier(0.95,0.05,0.795,0.035);
+    --easeInBack: cubic-bezier(0.6,-0.28,0.735,0.045);
+    --easeOutQuad: cubic-bezier(0.25,0.46,0.45,0.94);
+    --easeOutQuart: cubic-bezier(0.165,0.84,0.44,1);
+    --easeOutExpo: cubic-bezier(0.19,1,0.22,1);
+    --easeOutBack: cubic-bezier(0.175,0.885,0.32,1.275);
+    --easeInOutQuad: cubic-bezier(0.455,0.03,0.515,0.955);
+    --easeInOutQuart: cubic-bezier(0.77,0,0.175,1);
+    --easeInOutExpo: cubic-bezier(1,0,0,1);
+    --easeInOutBack: cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+
+.css-1VShS.css-\+wbX2 {
+    width: var(--inactive-width);
+}
+.css-1VShS {
+    flex: 1 1 auto;
+    text-align: center;
+    transform-origin: left;
+    transition: .8s var(--easeOutCirc);
+    width: var(--panel-width);
+    will-change: width;
+}
+
+.css-1VShS, .css-yxsYh {
+    min-height: var(--panel-min-height);
+    position: relative;
+}
+
+.css-pjOS5.css-5fH3Q {
+    height: 100%;
+    width: 100%;
+}
+
+@media screen and (min-width: 320px) {
+    .css-TgbYx {
+        font-size: calc(165px + 4.6875vw);
+    }
+}
+
+.css-TgbYx {
+    background-size: cover;
+    cursor: pointer;
+    font-size: 180px;
+    min-height: var(--panel-min-height);
+    overflow: hidden;
+    padding: 25px;
+    position: relative;
+    text-align: center;
+}
+
+.css-EiWA- {
+    align-items: center;
+}
+
+.css-IGDFG {
+    justify-content: flex-end;
+}
+
+.css-pjOS5 {
+    display: flex
+;
+    flex-direction: column;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.css-UCfhz {
+    background-size: cover;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: scale(1.1) translateZ(0);
+    transform-origin: 0 50%;
+    transition: 1s var(--easeOutCirc);
+    will-change: transform;
+    z-index: -1;
+}
+
+.css-\+GyN9 {
+    margin: 0 auto;
+}
