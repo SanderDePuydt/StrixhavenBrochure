@@ -160,3 +160,21 @@ body {
         font-size: 0.8rem;
     }
 }
+
+@media (max-width: 768px) {
+    .card.expanded {
+        flex: 8; /* 80% for expanded on mobile */
+    }
+
+    .card.shrunk {
+        flex: 0.5; /* 5% for shrunk on mobile */
+    }
+
+    .title {
+        font-size: 1rem;
+    }
+
+    .description {
+        font-size: 0.8rem;
+    }
+}
