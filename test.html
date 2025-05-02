@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Proportional Expandable Cards</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #111;
+            font-family: sans-serif;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            width: 100vw;
+            height: 50vh;
+        }
+
+        .card {
+            flex: 1;
+            transition: flex 0.6s ease, background-position 0.6s ease;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+
+        .card.expanded {
+            flex: 4;
+            background-position: left center;
+        }
+
+        .card.shrunk {
+            flex: 1.5;
+            background-position: center center;
+        }
+
+        .overlay {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            pointer-events: none;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .description {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            display: none;
+        }
+
+        .card.expanded .description.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 1rem;
+            }
+
+            .description {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card" style="background-image: url('https://picsum.photos/id/1015/1200/600');">
+        <div class="overlay">
+            <div class="title">Mountain</div>
+            <div class="description">A serene view of the mountain range during sunrise.</div>
+        </div>
+    </div>
+    <div class="card" style="background-image: url('https://picsum.photos/id/1021/1200/600');">
+        <div class="overlay">
+            <div class="title">Forest</div>
+            <div class="description">A quiet, misty forest trail perfect for hikes.</div>
+        </div>
+    </div>
+    <div class="card" style="background-image: url('https://picsum.photos/id/1035/1200/600');">
+        <div class="overlay">
+            <div class="title">Coastline</div>
+            <div class="description">Waves crashing against the rugged coastline.</div>
+        </div>
+    </div>
+    <div class="card" style="background-image: url('https://picsum.photos/id/1043/1200/600');">
+        <div class="overlay">
+            <div class="title">Desert</div>
+            <div class="description">Golden sands stretching to the horizon under the sun.</div>
+        </div>
+    </div>
+    <div class="card" style="background-image: url('https://picsum.photos/id/1056/1200/600');">
+        <div class="overlay">
+            <div class="title">Lake</div>
+            <div class="description">A peaceful lake reflecting the surrounding trees.</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+        const desc = card.querySelector('.description');
+
+        card.addEventListener('click', () => {
+            const isExpanded = card.classList.contains('expanded');
+
+            cards.forEach(c => {
+                c.classList.remove('expanded', 'shrunk');
+                const d = c.querySelector('.description');
+                d.classList.remove('show');
+                d.style.display = 'none';
+            });
+
+            if (!isExpanded) {
+                card.classList.add('expanded');
+                cards.forEach(c => {
+                    if (c !== card) c.classList.add('shrunk');
+                });
+
+                card.addEventListener('transitionend', function handler(e) {
+                    if (e.propertyName === 'flex-grow' || e.propertyName === 'flex') {
+                        desc.style.display = 'block';
+                        void desc.offsetHeight;
+                        desc.classList.add('show');
+                        card.removeEventListener('transitionend', handler);
+                    }
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>
